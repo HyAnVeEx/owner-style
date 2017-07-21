@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password:
   socket: /tmp/mysql.sock
 
 development:
@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: owner-style_production
-  username: owner-style
-  password: <%= ENV['OWNER-STYLE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
