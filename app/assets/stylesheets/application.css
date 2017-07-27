@@ -14,11 +14,5 @@
  *= require_self
  *= require font-awesome
  */
-@import "./top";
-@import "./contents";
-@import "./footer";
-@import "./clearfix";
-@import "./wrapper";
-@import "font-awesome";
 
 
