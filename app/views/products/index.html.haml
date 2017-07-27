@@ -1,0 +1,48 @@
+%body
+  .wrapper
+    .top
+      .top__movie.clearfix
+        %iframe.player{height:"900",src:'https://www.youtube.com/embed/Bgl9YwQoywM?modestbranding=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=Bgl9YwQoywM',flameborder:0,containment:'body',autoPlay:true, mute:true, startAt:0, opacity:0.5, width:"1480"}
+      .top__header.clearfix
+        %h1.top__header__logo OWNERS
+        %ul.top__header__menu
+          %li
+            %p OWNERSについて
+          %li
+            %p 使い方
+          %li
+            %p 岡田昌洋 さん
+      .top__title.clearfix
+        %h2.top__title__main とっておきの、オーナーになろう。
+        .top__title__sub OWN YOUR FAVORITE. THIS IS YOURS.
+    .contents
+      .contents__products
+        .product
+          %section.items
+            .status.open
+              %p 受付中
+            %figure.item-image
+              %img{alt:"", height:"223", s3:"1", src:"https://s3-ap-northeast-1.amazonaws.com/owners-pro/Product/65/main_image/w340h223_DSC01659.JPG", ssl:"1", width:"340"}/
+            %h2 【第2期】まるごと一匹キープ：通称“黒いダイヤ” 青森県が誇る海の至宝「最高級 天然クロマグロ」
+            .info
+              %p.place 青森県西津軽郡深浦町
+              %p.price ¥160,000
+    .footer
+      .footer__image
+        %img{src:"#{asset_path "bg_footer.jpg"}", width:"1480"}/
+      %h2.footer__logo.clearfix OWNERS
+      .footer__nav
+        %ul.clearfix
+          %li
+            %a{href:"/contact"} お問い合わせ
+          %li
+            %a{href:"/terms"} 利用規約
+          %li
+            %a{href:"/qa"} よくある質問
+          %li
+            %a{href:"/privacy"} プライバシーポリシー
+          %li
+            %a{href:"/company"} 運営会社
+          %li
+            %a{href:"/law"} 特定商取引法に関する表示
+      %p.footer__copy COPYRIGHT  2017  OWNERS

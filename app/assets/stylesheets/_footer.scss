@@ -1,0 +1,33 @@
+.footer{
+  color:white;
+  height:300px;
+  &__image{
+    position: absolute;
+    z-index: -1;
+  }
+  &__logo{
+      font-size: 28px;
+      font-style: italic;
+      font-family: 'Apple Chancery',sans-serif;
+      text-align: center;
+  }
+  &__nav ul{
+    font-size: 15px;
+    padding-left: 300px;
+    list-style: none;
+    font-style:italic;
+    float: left;
+    width:1180px;
+  }
+  &__nav li{
+    display: inline-block;
+    line-height: 60px;
+    padding: 30px 10px 0 10px;
+
+  }
+  &__copy{
+      font-size: 12px;
+      padding-top: 80px;
+      text-align: center;
+  }
+}

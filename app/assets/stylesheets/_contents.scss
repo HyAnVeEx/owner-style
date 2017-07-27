@@ -1,0 +1,15 @@
+.contents {
+  width:1100px;
+  min-height: 700px;
+  margin:0 auto;
+  padding-top: 30px;
+  padding-bottom: 106px;
+  &__products{
+    width:340px;
+    display:block;
+    float:left;
+    margin-right: 40px;
+    position:relative;
+    margin-bottom:48px;
+  }
+}
