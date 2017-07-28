@@ -1,0 +1,190 @@
+#container {
+    width: 100%;
+    min-width: 1100px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+ #mypage{
+  width: 1100px;
+  margin: 0 auto;
+  background-color: #f8f6f3;
+  min-height: 800px;
+ }
+
+#mypage .mypage__left {
+    width: 240px;
+    float: left;
+    padding-top: 80px;
+    position: relative;
+    h2{
+    font-size: 16px;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    }
+}
+
+#mypage .mypage__left .menu {
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+#mypage .mypage__left .comment {
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+#mypage .mypage__left .member-photo {
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    border: 5px solid #fff;
+    top: -40px;
+    left: 10%;
+}
+
+#mypage .mypage__left .menu .side-menu {
+    margin-top: 15px;
+}
+
+#mypage .mypage__left .menu .side-menu li {
+    border-top: 1px dotted #d2cec7;
+}
+
+#mypage li {
+    list-style: none;
+}
+
+
+.side-menu a{
+  color: #2d1d09;
+  display: block;
+  padding: 12px 0 12px 20px;
+}
+
+#mypage .mypage__left .comment {
+    margin-top: 40px;
+    text-align: center;
+}
+#mypage .mypage__left .comment h3 {
+    margin-bottom: 15px;
+}
+#mypage .mypage__left .submit {
+    width: 133px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#mypage .mypage__left .w-box {
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+}
+
+
+#mypage .mypage__content {
+    width: 820px;
+    padding-top: 90px;
+    padding-bottom: 80px;
+    float: right;
+}
+#mypage .newa-area .news-official {
+    width: 340px;
+    float: left;
+}
+#mypage .newa-area .latest-news {
+    width: 440px;
+    float: right;
+}
+
+
+.comment{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.comment h3{
+    margin-bottom: 15px;
+}
+
+.mypage__content{
+    width: 820px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    float: right;
+}
+
+  .news-official{
+    width:340px;
+    float:left;
+  }
+
+.w-box {
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 240px;
+    padding: 0;
+}
+
+.scroll-box {
+    width: 340px;
+    height: 230px;
+    overflow: scroll;
+}
+
+.news-official dl:first-child {
+    border-top: none;
+}
+
+.latest-news {
+    width: 440px;
+    float: right;
+}
+
+#mypage .products-area {
+    padding-top: 40px;
+    clear: both;
+}
+
+#mypage .products-area .products {
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 40px;
+    min-height: 230px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 300px;
+}
+#mypage .products-area h2 {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 29px;
+}
+
+
+#mypage .newa-area h2 {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 29px;
+}
+
+#mypage .newa-area .latest-news .w-box {
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 240px;
+}

@@ -4,14 +4,34 @@
       .top__movie.clearfix
         %iframe.player{height:"900",src:'https://www.youtube.com/embed/Bgl9YwQoywM?modestbranding=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=Bgl9YwQoywM',flameborder:0,containment:'body',autoPlay:true, mute:true, startAt:0, opacity:0.5, width:"1480"}
       .top__header.clearfix
-        %h1.top__header__logo OWNERS
-        %ul.top__header__menu
-          %li
-            %p OWNERSについて
-          %li
-            %p 使い方
-          %li
-            %p 岡田昌洋 さん
+        - if user_signed_in?
+          %h1.top__header__logo
+            %a{href: "/"} OWNERS
+          %ul.top__header__menu
+            %li
+              %p OWNERSについて
+            %li
+              %p 使い方
+            %li
+              %p
+                %a{href: "/users"} #{current_user.name} さんのマイページ
+            %li
+              %p
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %h1.top__header__logo
+            %a{href: "/"} OWNERS
+          %ul.top__header__menu
+            %li
+              %p OWNERSについて
+            %li
+              %p 使い方
+            %li
+              %p
+                = link_to "ログイン", new_user_session_path, class: 'post'
+            %li
+              %p
+                = link_to "新規登録", new_user_registration_path, class: 'post'
       .top__title.clearfix
         %h2.top__title__main とっておきの、オーナーになろう。
         .top__title__sub OWN YOUR FAVORITE. THIS IS YOURS.

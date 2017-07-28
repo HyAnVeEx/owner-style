@@ -1,0 +1,50 @@
+#wrapper
+  %section.edit-area
+  = form_tag( "/users/#{@id}", method: :patch) do
+    %h2 アカウント設定
+    .edit-area
+      %article.clearfix
+        .product-edit
+          .w-box
+            %dl
+              %dt
+                氏名
+                %span ※
+              %dd
+                .input
+                  .input.text
+                    %input#OwnerSei.jq-placeholder.w100p.style02{maxlength: "255", name: :name, placeholder: "氏名", title: "氏名", type: "text", value: "#{@name}"}/
+            %dl
+              %dt
+                メールアドレス
+                %span ※
+              %dd
+                .input
+                  .input.email
+                    %input#OwnerEmail.jq-placeholder.w100p.style02{maxlength: "255", name: :email, placeholder: "メールアドレス", title: "メールアドレス", type: "email", value: "#{@email}"}/
+            / %dl
+            /   %dt
+            /     パスワード
+            /     %span ※
+            /   %dd
+            /     .input
+            /       .input.password
+            /         %input#OwnerPassword.jq-placeholder.w100p.style02{:name => "data[user][password]", :placeholder => "●●●●●●●", :type => "password", value: "#{@pw}"}/
+            %dl
+              %dt
+                プロフィール画像
+              %dd
+                .p-right
+                  .upload-button
+                    ファイルを選択
+                    .input.file
+                      %input#OwnerProfileImage{name: :image, onchange: "uv.style.display='inline-block'; uv.value = this.value;", type: "file"}/
+                    %input#uv.upload-value{disabled: "disabled", type: "text"}/
+          .w-box.clearfix{style: "margin-top:30px;"}
+            .btn-parts
+              %a.btn-nomal{href:"/users"} 戻る
+            .btn-parts{style: "margin-bottom:0;"}
+              %input#OwnerId{name: "data[user][id]", type: "hidden", value: ""}/
+              %input#account_submit.btn-green{type: "submit", value: "更新"}/
+
+
