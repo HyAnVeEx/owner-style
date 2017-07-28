@@ -23,6 +23,14 @@
       list-style: none;
       float: right;
     }
+    &__menu2{
+      font-size: 20px;
+      padding-right: 140px;
+      list-style: none;
+      float: right;
+    }
+    .box{float:right}
+    .box2{float:right}
     &__menu li{
       display: inline-block;
       line-height: 60px;
