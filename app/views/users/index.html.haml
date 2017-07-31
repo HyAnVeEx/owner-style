@@ -3,6 +3,7 @@
     .mypage__left
       %section.menu
         %figure.member-photo
+          =image_tag current_user.picture.to_s
           %img{alt:"", src:"#{asset_path "noimage-square.png"}", width:"115"}/
         %h2 #{current_user.name}
         %ul.side-menu
