@@ -1,26 +1,22 @@
 class UsersController < ApplicationController
   def index
+    @image = current_user.image
   end
 
   def edit
-    user = User.find(params[:id])
-    @id = user.id
-    @name = user.name
-    @email = user.email
-    # @pw = user.encrypted_password
+    @user = User.find(params[:id])
   end
 
   def update
-    # binding.pry
     user = User.find(params[:id])
     if user.update(user_params)
-      redirect_to root_path
+      redirect_to users_path
     end
   end
 
   private
   def user_params
-    params.permit(:name, :email, :image)
+    params.require(:user).permit(:name, :email, :picture)
   end
 
 end
