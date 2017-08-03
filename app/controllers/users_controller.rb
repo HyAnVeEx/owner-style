@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @image = current_user.image
+    # @image = current_user.image
     @products = Product.all.order("created_at DESC")
 
     # @products.each do |product|
