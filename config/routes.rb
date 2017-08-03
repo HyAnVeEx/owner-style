@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'users/index'
-
-  root 'products#index'
+  root 'users#index'
   devise_for :users
-  resources :users, only: [:index, :edit, :update]
-    # resources :deliveries, only: [:edit, :update] do
-    # end
+  resources :users, only: [:index, :edit, :update,:show]
+  resources :products, only: [:index, :edit, :update,:show,:create] do
+    resources :orders, only: [:create,:new]
+  end
 end

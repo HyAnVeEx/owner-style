@@ -11,5 +11,17 @@
     margin-right: 40px;
     position:relative;
     margin-bottom:48px;
+    &__new_product{
+      font-size: 30px;
+      min-width:1000px;
+      min-height:50px;
+      text-align: center;
+    }
+    &__add_product{
+      border:solid;
+    }
+    &__list{
+      margin-top: 20px;
+    }
   }
 }

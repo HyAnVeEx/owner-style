@@ -1,42 +1,69 @@
-#wrapper
-  #mypage
-    .mypage__left
-      %section.menu
-        %figure.member-photo
-          =image_tag current_user.picture.to_s
-          %img{alt:"", src:"#{asset_path "noimage-square.png"}", width:"115"}/
-        %h2 #{current_user.name}
-        %ul.side-menu
+%body
+  .wrapper
+    .top
+      .top__movie.clearfix
+        %iframe.player{height:"900",src:'https://www.youtube.com/embed/Bgl9YwQoywM?modestbranding=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=Bgl9YwQoywM',flameborder:0,containment:'body',autoPlay:true, mute:true, startAt:0, opacity:0.5, width:"1480"}
+      .top__header.clearfix
+        - if user_signed_in?
+          %h1.top__header__logo
+            %a{href: "/"} OWNERS
+          %ul.top__header__menu
+            %li
+              %p OWNERSについて
+            %li
+              %p 使い方
+            %li
+              %p
+                %a{href: "/users/#{current_user.id}"} #{current_user.name} さんのマイページ
+            %li
+              %p
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %h1.top__header__logo
+            %a{href: "/"} OWNERS
+          %ul.top__header__menu
+            %li
+              %p OWNERSについて
+            %li
+              %p 使い方
+            %li
+              %p
+                = link_to "ログイン", new_user_session_path, class: 'post'
+            %li
+              %p
+                = link_to "新規登録", new_user_registration_path, class: 'post'
+      .top__title.clearfix
+        %h2.top__title__main とっておきの、オーナーになろう。
+        .top__title__sub OWN YOUR FAVORITE. THIS IS YOURS.
+    .contents
+      .contents__products
+        .contents__products__new_product.clearfix
+          %i.fa.fa-child.icon
+          %i.fa.fa-child.icon
+          %i.fa.fa-child.icon
+          %a.contents__products__add_product{href:"/products"} プロダクトを投稿する
+          %i.fa.fa-child.icon
+          %i.fa.fa-child.icon
+          %i.fa.fa-child.icon
+        .contents__products__list
+          - @products.each do |product|
+            = render partial: "/products/product" , locals: { product: product }
+    .footer
+      .footer__image
+        %img{src:"#{asset_path "bg_footer.jpg"}", width:"1480"}/
+      %h2.footer__logo.clearfix OWNERS
+      .footer__nav
+        %ul.clearfix
           %li
-            %a{href:"/users/"} ダッシュボード
+            %a{href:"/contact"} お問い合わせ
           %li
-            %a{href:"/users/deliveries"} 送り先情報
+            %a{href:"/terms"} 利用規約
           %li
-            %a{href:"/users/#{current_user.id}/edit"} アカウント設定
+            %a{href:"/qa"} よくある質問
           %li
-            %a{href:"/users/order_histories"} 購入履歴
-      .comment.w-box
-        %h3 運営に意見を送る
-        %form{:action => "/", :method => "post"}
-          #feedback_div.textarea
-            %textarea#feedback_message.style02.w100p{:placeholder => "ご意見・ご要望などございましたらこちらからお寄せ下さい。\n        なお、返信を要する内容については、問い合わせフォームよりお願い致します。", :style => "font-size:12px; height:150px;"}
-            %input#feedback_id{:name => "owner_id", :type => "hidden", :value => "2174"}/
-          %input#feedback_submit.submit{:type => "button", :value => "送信"}/
-    .mypage__content
-      .newa-area
-        %section.news-official
-          %h2 運営からのお知らせ
-          .w-box
-            .scroll-box
-              %dl
-                %dt 2017/06/23
-                %dd 第３期パッションフルーツプランが公開されました！
-        %section.latest-news
-          %h2 新着記事
-          .w-box
-            .scroll-box
-              %p 記事がありません。
-      %section.products-area
-        %h2 契約中のプラン
-        .products
-          %p 契約中のプランがありません。
+            %a{href:"/privacy"} プライバシーポリシー
+          %li
+            %a{href:"/company"} 運営会社
+          %li
+            %a{href:"/law"} 特定商取引法に関する表示
+      %p.footer__copy COPYRIGHT  2017  OWNERS
