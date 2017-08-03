@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
   def index
     @image = current_user.image
+    @products = Product.all.order("created_at DESC")
+
+    # @products.each do |product|
+      # @orders =  product.orders
+      # sum = 0
+      # @orders.each do |order|
+      #   sum += order.num
+      # end
+      # @sum = sum
+    # end
   end
 
   def edit
@@ -18,5 +28,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :picture)
   end
-
 end

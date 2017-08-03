@@ -1,0 +1,9 @@
+.header
+= render partial: "header"
+.input
+  = form_for([@product,@order]) do |f|
+    %ul
+      %li.message
+        = f.text_field :num, class:'product_num', placeholder:' 個数を入力してください'
+      %li
+        = f.submit "Send", class:'chat-footer__send'

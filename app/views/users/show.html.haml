@@ -1,0 +1,42 @@
+#wrapper
+  #mypage
+    .mypage__left
+      %section.menu
+        %figure.member-photo
+          =image_tag current_user.picture.to_s
+          %img{alt:"", src:"#{asset_path "noimage-square.png"}", width:"115"}/
+        %h2 #{current_user.name}
+        %ul.side-menu
+          %li
+            %a{href:"/users/"} ダッシュボード
+          %li
+            %a{href:"/users/deliveries"} 送り先情報
+          %li
+            %a{href:"/users/#{current_user.id}/edit"} アカウント設定
+          %li
+            %a{href:"/users/order_histories"} 購入履歴
+      .comment.w-box
+        %h3 運営に意見を送る
+        %form{:action => "/", :method => "post"}
+          #feedback_div.textarea
+            %textarea#feedback_message.style02.w100p{:placeholder => "ご意見・ご要望などございましたらこちらからお寄せ下さい。\n        なお、返信を要する内容については、問い合わせフォームよりお願い致します。", :style => "font-size:12px; height:150px;"}
+            %input#feedback_id{:name => "owner_id", :type => "hidden", :value => "2174"}/
+          %input#feedback_submit.submit{:type => "button", :value => "送信"}/
+    .mypage__content
+      .newa-area
+        %section.news-official
+          %h2 運営からのお知らせ
+          .w-box
+            .scroll-box
+              %dl
+                %dt 2017/06/23
+                %dd 第３期パッションフルーツプランが公開されました！
+        %section.latest-news
+          %h2 新着記事
+          .w-box
+            .scroll-box
+              %p 記事がありません。
+      %section.products-area
+        %h2 契約中のプラン
+        .products
+          %p 契約中のプランがありません。

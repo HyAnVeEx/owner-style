@@ -1,0 +1,15 @@
+#product-data
+  .layout-bpx
+    .left-box
+      %dl.brown
+        %dt
+        %dd.close 受付中
+      %dl
+        %dt #{@product.title}
+        %dd
+          %span.nomal #{@product.area}
+      %dl
+        %dt 募集締切
+        %dd
+          %span> #{@product.deadline}
+    %a.btn-green.ajax.cboxElement{:href => "/products/#{@product.id}/orders/new"} お申し込み

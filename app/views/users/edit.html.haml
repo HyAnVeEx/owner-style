@@ -39,7 +39,7 @@
                   = f.file_field :picture
           .w-box.clearfix{style: "margin-top:30px;"}
             .btn-parts
-              %a.btn-nomal{href:"/users"} 戻る
+              %a.btn-nomal{href:"/users/#{current_user.id}"} 戻る
             .btn-parts{style: "margin-bottom:0;"}
               = f.submit "更新", class: 'account_submit.btn-green'
 

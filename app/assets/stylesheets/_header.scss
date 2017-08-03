@@ -1,0 +1,39 @@
+.mypage-area .header-mypage {
+    background: #fff;
+    height: 60px;
+}
+.mypage-area .header-mypage .bg-white {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+.mypage-area .header-mypage .bg-white h1 {
+    padding-top: 16px;
+}
+.mypage-area .header-mypage .bg-white .h-navi {
+    padding-top: 4px;
+}
+.mypage-area .header-mypage li {
+    position: relative;
+}
+.mypage-area .header-mypage li a {
+    color: #2d1d09;
+}
+
+.mypage-area .header-mypage .h-navi {
+    top: 20px;
+}
+.h-navi {
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
+.mypage-area .header-mypage .bg-white .sub-navi {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    width: 190px;
+    background: #fff;
+    display: none;
+    z-index: 999;
+}
