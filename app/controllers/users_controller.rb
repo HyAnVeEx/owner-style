@@ -4,12 +4,12 @@ class UsersController < ApplicationController
     @products = Product.all.order("created_at DESC")
 
     # @products.each do |product|
-      # @orders =  product.orders
-      # sum = 0
-      # @orders.each do |order|
-      #   sum += order.num
-      # end
-      # @sum = sum
+    #   @orders =  product.orders
+    #   sum = 0
+    #   @orders.each do |order|
+    #     sum += order.num
+    #   end
+    #   @sum = sum
     # end
   end
 

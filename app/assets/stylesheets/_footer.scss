@@ -1,10 +1,6 @@
 .footer{
   color:white;
   height:300px;
-  &__image{
-    position: absolute;
-    z-index: -1;
-  }
   &__logo{
       font-size: 28px;
       font-style: italic;
@@ -13,21 +9,33 @@
   }
   &__nav ul{
     font-size: 15px;
-    padding-left: 300px;
     list-style: none;
     font-style:italic;
     float: left;
-    width:1180px;
+    width:100%;
+    color: white;
   }
   &__nav li{
     display: inline-block;
-    line-height: 60px;
-    padding: 30px 10px 0 10px;
+    padding: 15px 10px 0 10px;
 
   }
   &__copy{
       font-size: 12px;
-      padding-top: 80px;
+      padding-left: 100px;
       text-align: center;
+      color: white;
   }
+}
+
+.fa-facebook-square:before {
+    font-size: 30px;
+}
+
+.fa-twitter-square:before {
+    font-size: 30px;
+}
+
+.fa-google-plus-square:before {
+    font-size: 30px;
 }

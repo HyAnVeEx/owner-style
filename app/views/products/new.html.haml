@@ -1,0 +1,46 @@
+#wrapper
+  %section.edit-area
+    %h2 プロダクト投稿
+    .edit-area
+    = form_for(@product) do |f|
+      %article.clearfix
+        .product-edit
+          .w-box
+            %dl
+              %dt
+                タイトル
+                %span ※
+              %dd
+                .input
+                  .input.title
+                    = f.text_field :title, class:'product_title', placeholder:' タイトル'
+            %dl
+              %dt
+                産地
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :area, class:'product_area', placeholder:' 産地'
+            %dl
+              %dt
+                オーナー登録費
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :price, class:'price_area', placeholder:' オーナー登録費'
+            %dl
+              %dt
+                期限
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :deadline, class:'deadline_area', placeholder:' 期限'
+          .w-box.clearfix{style: "margin-top:30px;"}
+            .btn-parts
+              %a.btn-nomal{href:"/users/"} 戻る
+            .btn-parts{style: "margin-bottom:0;"}
+              = f.submit "投稿", class: 'product_submit.btn-green'
+
