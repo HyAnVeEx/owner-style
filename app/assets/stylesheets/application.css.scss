@@ -14,10 +14,13 @@
  *= require_self
  *= require font-awesome
  */
-@import "./top";
-@import "./contents";
-@import "./footer";
+// @import "./top";
+// @import "./contents";
+// @import "./footer";
 @import "./clearfix";
-@import "./wrapper";
-@import "font-awesome";
+// @import "./wrapper";
+@import "./style";
+@import "./normalize";
+// @import "./sticky";
+// @import "font-awesome";
 
