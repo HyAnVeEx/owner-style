@@ -1,45 +1,90 @@
-#wrapper
-  %section.edit-area
-    %h2 プロダクト投稿
-    .edit-area
-    = form_for(@product) do |f|
-      %article.clearfix
-        .product-edit
-          .w-box
-            %dl
-              %dt
-                タイトル
-                %span ※
-              %dd
-                .input
-                  .input.title
-                    = f.text_field :title, class:'product_title', placeholder:' タイトル'
-            %dl
-              %dt
-                産地
-                %span ※
-              %dd
-                .input
-                  .input.area
-                    = f.text_field :area, class:'product_area', placeholder:' 産地'
-            %dl
-              %dt
-                オーナー登録費
-                %span ※
-              %dd
-                .input
-                  .input.area
-                    = f.text_field :price, class:'price_area', placeholder:' オーナー登録費'
-            %dl
-              %dt
-                期限
-                %span ※
-              %dd
-                .input
-                  .input.area
-                    = f.text_field :deadline, class:'deadline_area', placeholder:' 期限'
-          .w-box.clearfix{style: "margin-top:30px;"}
-            .btn-parts
-              %a.btn-nomal{href:"/users/"} 戻る
-            .btn-parts{style: "margin-bottom:0;"}
-              = f.submit "投稿", class: 'product_submit.btn-green'
+%script{src: "http://code.jquery.com/jquery-2.2.4.min.js"}
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.0.9/jquery.mb.YTPlayer.min.js"}
+
+%section.big-background
+  %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=Bgl9YwQoywM',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1,showControls: false,showYTLogo: false}"}
+  .pattern
+  .top__header
+    - if user_signed_in?
+      %h1.top__header__logo
+        = link_to "OWNERS", root_path, method: :get, class: 'top_logo'
+      %ul.top__header__menu
+        %li
+          %i.fa.fa-question
+          %a{href: "/users/#{current_user.id}"} OWNERSについて
+        %li.fa.fa-columns
+        %a{href: "/users/#{current_user.id}"} 使い方
+        %li
+          %a{href: "/users/#{current_user.id}"} #{current_user.name}さんのマイページ
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          .fa.fa-chevron-circle-up
+          .fa.fa-chevron-circle-down
+    - else
+      %h1.top__header__logo
+        = link_to "OWNERS", root_path, method: :get, class: 'top_logo'
+      %ul.top__header__menu
+        %li
+          %i.fa.fa-question-circle-o
+          %a{href: "/users/"} OWNERSについて
+        %li
+          %i.fa.fa-columns
+          %a{href: "/users/"} 使い方
+        %li
+          %i.fa.fa-plus-circle
+          %a#modal-signup.button-link 会員登録
+        %li
+          %i.fa.fa-user
+          %a#modal-open.button-link ログイン
+  .big-background-container
+    %h1.big-background-title とっておきの、オーナーになろう。
+    %h1#colorize OWN YOUR FAVORITE. THIS IS YOURS.
+    - if user_signed_in?
+    - else
+      %br
+      %br
+      %a.big-background-btn{href: "http://designmodo.com/video-background-website/"} OWNERSについて
+.wrapper
+  = render partial: "sticky"
+  %section.about-section
+    .about-section-container
+      - if user_signed_in?
+      - else
+        %h2.about-section-title OWNERSは、全国からとっておきの「オーナー制度」を集めた
+        %h2.about-section-title プラットフォームサービスです。
+        %h2.about-section-title_sub
+          %span OWNERS 利用ステップ
+        .step
+          .process
+            %i.process_icon.fa.fa-search
+            %h3.process_num
+              %span 1.
+              プランを探す
+            %p 生産者が提供しているプランからお気に入りのオーナー制度を見つけてください
+          .process
+            %i.process_icon.fa.fa-user-circle
+            %h3
+              %span 2.
+              オーナーになる
+            %p 商品の送り先など必要な情報を入力して現在募集中のオーナー制度に登録してください
+          .process
+            %i.process_icon.fa.fa-heart
+            %h3
+              %span 3.
+              プロセスを楽しむ
+            %p 生産者から届く生産状況など様々な情報をOWNERS上でチェックすることができます
+          .process
+            %i.process_icon.fa.fa-briefcase
+            %h3
+              %span 4.
+              商品が届く
+            %p
+              お待たせしました！
+              %br>/
+              生産者が育てた商品があなたの元へ届きます
+      .items-area
+        .content
+          = render @products
+%section.small-background-section
+  = render partial: "footer"
+
