@@ -1,33 +1,34 @@
 $(function(){
 
 //モーダルウィンドウを出現させるクリックイベント
-$("#modal-open").click( function(){
+$(".modal-open").click( function(){
 
   //キーボード操作などにより、オーバーレイが多重起動するのを防止する
   $( this ).blur() ;  //ボタンからフォーカスを外す
-  if( $( "#modal-overlay" )[0] ) return false ;   //新しくモーダルウィンドウを起動しない (防止策1)
+  if( $( ".modal-overlay" )[0] ) return false ;   //新しくモーダルウィンドウを起動しない (防止策1)
   //if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;   //現在のモーダルウィンドウを削除して新しく起動する (防止策2)
 
   //オーバーレイを出現させる
-  $( "body" ).append( '<div id="modal-overlay"></div>' ) ;
-  $( "#modal-overlay" ).fadeIn( "slow" ) ;
+  $( "body" ).append( '<div class="modal-overlay"></div>' ) ;
+  $( ".modal-overlay" ).fadeIn( "slow" ) ;
 
   //コンテンツをセンタリングする
   centeringModalSyncer() ;
 
   //コンテンツをフェードインする
-  $( "#modal-content" ).fadeIn( "slow" ) ;
+  $( ".modal-content" ).fadeIn( "slow" ) ;
 
   //[#modal-overlay]、または[#modal-close]をクリックしたら…
-  $( "#modal-overlay,#modal-close" ).unbind().click( function(){
+  $( ".modal-overlay,.modal-close" ).unbind().click( function(){
 
     //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-    $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+    $( ".modal-content,.modal-overlay" ).fadeOut( "slow" , function(){
 
       //[#modal-overlay]を削除する
-      $('#modal-overlay').remove() ;
+      $('.modal-overlay').remove() ;
 
     } ) ;
+
 
   } ) ;
 
@@ -47,11 +48,11 @@ $( window ).resize( centeringModalSyncer ) ;
     // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
 //    var cw = $( "#modal-content" ).outerWidth( {margin:true} );
 //    var ch = $( "#modal-content" ).outerHeight( {margin:true} );
-    var cw = $( "#modal-content" ).outerWidth();
-    var ch = $( "#modal-content" ).outerHeight();
+    var cw = $( ".modal-content" ).outerWidth();
+    var ch = $( ".modal-content" ).outerHeight();
 
     //センタリングを実行する
-    $( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+    $( ".modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
 
   }
 

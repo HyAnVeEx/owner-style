@@ -1,4 +1,4 @@
-#modal-content {
+.modal-content {
   width: 50% ;
   margin: 0 ;
   padding: 10px 20px ;
@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-#modal-section {
+.modal-section {
   width: 50% ;
   margin: 0 ;
   padding: 10px 20px ;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-#modal-overlay {
+.modal-overlay {
   z-index: 1 ;
   display: none ;
   position: fixed ;
@@ -38,6 +38,11 @@
   text-decoration: none ;
 }
 
+.button-link_sticky {
+  color: black ;
+  text-decoration: none ;
+}
+
 .button-link_ls{
   color: black ;
   text-decoration: none ;
@@ -47,8 +52,14 @@
 
 .button-link:hover {
   cursor: pointer ;
+  color: white ;
+}
+
+.button-link_sticky:hover {
+  cursor: pointer ;
   color: black ;
 }
+
 
 .modal__submit {
     font-size: 21px;

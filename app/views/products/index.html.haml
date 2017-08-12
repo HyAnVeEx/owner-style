@@ -11,9 +11,9 @@
       %ul.top__header__menu
         %li
           %i.fa.fa-question
-          %a{href: "/users/#{current_user.id}"} OWNERSについて
+          %a{href: "/about"} OWNERSについて
         %li.fa.fa-columns
-        %a{href: "/users/#{current_user.id}"} 使い方
+        %a{href: "/about"} 使い方
         %li
           %a{href: "/users/#{current_user.id}"} #{current_user.name}さんのマイページ
         %li
@@ -26,16 +26,16 @@
       %ul.top__header__menu
         %li
           %i.fa.fa-question-circle-o
-          %a{href: "/users/"} OWNERSについて
+          %a{href: "/about"} OWNERSについて
         %li
           %i.fa.fa-columns
-          %a{href: "/users/"} 使い方
+          %a{href: "/about"} 使い方
         %li
           %i.fa.fa-plus-circle
-          %a#modal-signup.button-link 会員登録
+          %a.modal-signup.button-link 会員登録
         %li
           %i.fa.fa-user
-          %a#modal-open.button-link ログイン
+          %a.modal-open.button-link ログイン
   .big-background-container
     %h1.big-background-title とっておきの、オーナーになろう。
     %h1#colorize OWN YOUR FAVORITE. THIS IS YOURS.
@@ -43,7 +43,7 @@
     - else
       %br
       %br
-      %a.big-background-btn{href: "http://designmodo.com/video-background-website/"} OWNERSについて
+      %a.big-background-btn{href: "/about"} OWNERSについて
 .wrapper
   = render partial: "sticky"
   %section.about-section
