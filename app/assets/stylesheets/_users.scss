@@ -87,15 +87,13 @@
     background: #fff;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 15px 20px;
-    margin-bottom: 30px;
+    padding: 4px 20px;
 }
 
 
 #mypage .mypage__content {
     width: 820px;
-    padding-top: 90px;
-    padding-bottom: 80px;
+    padding: 90px 20px 80px 0;
     float: right;
 }
 #mypage .newa-area .news-official {
@@ -136,12 +134,24 @@
     height: 240px;
     padding: 0;
 }
+.w-box_edit {
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
 
 .scroll-box {
     width: 340px;
     height: 230px;
     overflow: scroll;
 }
+.scroll-box_edit {
+    width: 500px;
+    overflow: scroll;
+}
+
 
 .news-official dl:first-child {
     border-top: none;
@@ -162,10 +172,10 @@
     border-radius: 10px;
     position: relative;
     margin-bottom: 40px;
-    min-height: 230px;
+    min-height: 250px;
     padding: 20px;
     box-sizing: border-box;
-    width: 300px;
+    width: 800px;
 }
 #mypage .products-area h2 {
     font-size: 16px;
@@ -188,3 +198,8 @@
     box-sizing: border-box;
     height: 240px;
 }
+
+.style02{
+    width:200px;
+}
+

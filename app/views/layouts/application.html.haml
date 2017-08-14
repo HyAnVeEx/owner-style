@@ -14,9 +14,11 @@
       = form_for(:user, url: session_path(:user)) do |f|
         .field
         .iconUser
+        - f.label :email
         = f.text_field :email, placeholder: "メールアドレス"
         .field
         .iconPassword
+        - f.label :password
         = f.password_field :password, placeholder: "****"
         %br/
         = f.submit "Sign in" ,class: "modal__submit"

@@ -1,9 +1,10 @@
 #wrapper
   #mypage
     .mypage__left
+      = link_to "ホームに戻る", root_path, method: :get
       %section.menu
         %figure.member-photo
-          =image_tag current_user.picture.to_s
+          =image_tag current_user.picture
           %img{alt:"", src:"#{asset_path "noimage-square.png"}", width:"115"}/
         %h2 #{current_user.name}
         %ul.side-menu
@@ -13,6 +14,7 @@
             %a{href:"/users/deliveries"} 送り先情報
           %li
             %a{href:"/users/#{current_user.id}/edit"} アカウント設定
+          %br
           %li
             %a{href:"/users/order_histories"} 購入履歴
       .comment.w-box
@@ -39,4 +41,4 @@
       %section.products-area
         %h2 契約中のプラン
         .products
-          %p 契約中のプランがありません。
+          契約中のプランがありません。

@@ -1,19 +1,40 @@
-.sticky{style: "top: 0px;"}
-  .bg-white.navi-box
-    %h2.js_header
-      = link_to "OWNERS", root_path, method: :get, class: 'js_header_logo'
-    %ul.h-navi
-      %li
-        %a{href: "/about"}
-          %i.fa.fa-question-circle-o.js_icon
-          OWNERSについて
-      %li
-        %a{href: "/about"}
-          %i.fa.fa-columns.js_icon
-          使い方
-      %li
-        %i.fa.fa-plus-circle.js_icon
-        %a.modal-signup.button-link_sticky 会員登録
-      %li
-        %i.fa.fa-user.js_icon
-        %a.modal-open.button-link_sticky ログイン
+- if user_signed_in?
+  .sticky{style: "top: 0px;"}
+    .bg-white.navi-box
+      %h2.js_header
+        = link_to "OWNERS", root_path, method: :get, class: 'js_header_logo'
+      %ul.h-navi
+        %li
+          %a{href: "/about"}
+            %i.fa.fa-question-circle-o.js_icon
+            OWNERSについて
+        %li
+          %a{href: "/about"}
+            %i.fa.fa-columns.js_icon
+            使い方
+        %li
+          %i.fa.fa-address-card_js_icon
+          %a{href: "/users/#{current_user.id}"} #{current_user.name}さんのダッシュボード
+        %li
+          %i.fa.fa-sign-out_js_icon
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+- else
+  .sticky{style: "top: 0px;"}
+    .bg-white.navi-box
+      %h2.js_header
+        = link_to "OWNERS", root_path, method: :get, class: 'js_header_logo'
+      %ul.h-navi
+        %li
+          %a{href: "/about"}
+            %i.fa.fa-question-circle-o.js_icon
+            OWNERSについて
+        %li
+          %a{href: "/about"}
+            %i.fa.fa-columns.js_icon
+            使い方
+        %li
+          %i.fa.fa-plus-circle.js_icon
+          %a.modal-signup.button-link_sticky 会員登録
+        %li
+          %i.fa.fa-user.js_icon
+          %a.modal-open.button-link_sticky ログイン
