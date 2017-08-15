@@ -1,0 +1,99 @@
+#cart h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 100px 0;
+    background-color: #DCDCDC;
+    font-family: monospace;
+}
+
+.cart-content {
+    width: 100%;
+    background: #fff;
+    padding: 30px 0 100px;
+}
+
+.cart-main {
+    width: 740px;
+    margin: 0 auto;
+}
+
+.cart-main .form-content {
+    border: 1px solid #d2cec7;
+    box-shadow: 0px 5px 0px 0px rgba(210,206,199,0.2);
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding: 30px 40px 40px;
+}
+
+.cart-main .form-content h3 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart-main .form-content .application-detail {
+    margin-top: 30px;
+}
+
+.cart-main .form-content .application-detail dt {
+    background: #f1eee8;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+
+.cart-main .form-content .application-detail dd {
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-left: 20px;
+    margin: 20px 0 30px;
+}
+
+.cart-main .form-content .application-detail dt {
+    background: #f1eee8;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+
+.cart-main .form-content .application-detail dd .price {
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+
+.cart-main .form-content .application-detail dd .unit {
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.cart-main .btn-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-main .btn-area a.btn-nomal {
+    margin-right: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.cart-main .btn-area .submit {
+    font-size: 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#order_num{
+  width: 140px;
+  height: 40px;
+}
+
+

@@ -1,15 +1,17 @@
 %a.item-link{href: "/products/#{product.id}"}
+  %p 受付中
+  %p.no_underline 残り
   %section.items
-    .status.open
-      %p 受付中
     %figure.item-image
-      %img{alt: "", height: "223", s3: "1", src:  "https://s3-ap-northeast-1.amazonaws.com/owners-pro/Product/65/main_image/w340h223_DSC01659.JPG", ssl: "1", width: "340"}/
+      %img
+      =image_tag product.image, height: "223" , width: "340"
     %h2 #{product.title}
     .info
       %p.place
-        %i.sprite-2x.icon-pin>
+        %i.fa.fa-map-marker
         #{product.area}
       %p.price
-        %i.sprite-2x.icon-bag>
+        %i.fa.fa-shopping-bag
         ¥ #{product.price}
+
 

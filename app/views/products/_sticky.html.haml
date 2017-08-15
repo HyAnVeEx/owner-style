@@ -13,10 +13,10 @@
             %i.fa.fa-columns.js_icon
             使い方
         %li
-          %i.fa.fa-address-card_js_icon
+          %i.fa.fa-address-card.js_icon
           %a{href: "/users/#{current_user.id}"} #{current_user.name}さんのダッシュボード
         %li
-          %i.fa.fa-sign-out_js_icon
+          %i.fa.fa-sign-out.js_icon
           = link_to "ログアウト", destroy_user_session_path, method: :delete
 - else
   .sticky{style: "top: 0px;"}

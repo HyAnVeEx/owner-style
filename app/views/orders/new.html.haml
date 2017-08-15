@@ -1,9 +1,35 @@
-.header
-= render partial: "header"
-.input
-  = form_for([@product,@order]) do |f|
-    %ul
-      %li.message
-        = f.text_field :num, class:'product_num', placeholder:' 個数を入力してください'
-      %li
-        = f.submit "Send", class:'chat-footer__send'
+%body
+  #wrapper
+    #container.mypage-area
+      .header
+      = render partial: "header"
+    %section#cart
+      %h2 オーナープランお申し込み
+      .cart-content
+        .cart-main
+          %section.form-content
+            %h3 お申し込み内容
+            %dl.application-detail
+              %dt 登録プラン
+              %dd #{@product.title}
+              %dt 金額
+              %dd
+                ￥
+                %span.price #{@product.price}
+                %span.unit /一口
+              %dt 購入数の登録
+              %dd
+                / %select{:name => "num"}
+                /   %option{:selected => "selected", :value => "1"} 1
+                /   %option{:value => "2"} 2
+                /   %option{:value => "3"} 3
+              .input
+                = form_for([@product,@order]) do |f|
+                  %ul
+                    %li.message
+                      = f.select :num, [1, 2, 3], {include_blank: false}
+                    %li
+                      = f.submit "Send", class:'chat-footer__send'
+
+
+

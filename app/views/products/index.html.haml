@@ -48,9 +48,12 @@
 .wrapper
   = render partial: "sticky"
   %section.about-section
-    .about-section-container
-      - if user_signed_in?
-      - else
+    - if user_signed_in?
+      .add_product
+        %i.fa.fa-plus
+          = link_to "プロダクトを投稿する(admin)", new_product_path
+    - else
+      .about-section-container
         %h2.about-section-title OWNERSは、全国からとっておきの「オーナー制度」を集めた
         %h2.about-section-title プラットフォームサービスです。
         %h2.about-section-title_sub
@@ -83,9 +86,9 @@
               お待たせしました！
               %br>/
               生産者が育てた商品があなたの元へ届きます
-      .items-area
-        .content
-          = render @products
+    .items-area
+      .content
+        = render @products
 %section.small-background-section
   = render partial: "footer"
 

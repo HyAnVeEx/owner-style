@@ -1,17 +1,18 @@
 %header.header-mypage
   .bg-white
-    %h1{:title => "OWNERS"}
-      %a{:href => "/"} OWNERS
+    %h2.js_header
+      = link_to "OWNERS", root_path, method: :get, class: 'js_header_logo'
     %nav
       %ul.h-navi
         %li
+          %i.fa.fa-question-circle-o.js_icon
           %a{:href => "/about"} OWNERSについて
-      %ul.sub-navi
         %li
-          %a{:href => "/owners/dashboard"} ダッシュボード
+          %i.fa.fa-columns.js_icon
+          %a{href: "/about"} 使い方
         %li
-          %a{:href => "/owner_deliveries"} 送り先情報
+          %i.fa.fa-address-card.js_icon
+          %a{href: "/users/#{current_user.id}"} #{current_user.name}さんのダッシュボード
         %li
-          %a{:href => "/owners/account"} アカウント設定
-        %li
-          %a{:href => "/owners/logout"} ログアウト
+          %i.fa.fa-sign-out.js_icon
+          = link_to "ログアウト", destroy_user_session_path, method: :delete

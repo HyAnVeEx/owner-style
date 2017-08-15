@@ -1,7 +1,9 @@
 #wrapper
+  #container.mypage-area
+    .header
+      = render partial: "/orders/header"
   #mypage
     .mypage__left
-      = link_to "ホームに戻る", root_path, method: :get
       %section.menu
         %figure.member-photo
           =image_tag current_user.picture

@@ -38,7 +38,9 @@
                 .input
                   .input.area
                     = f.text_field :deadline, class:'deadline_area', placeholder:' 期限'
+
           .w-box.clearfix{style: "margin-top:30px;"}
+            = f.file_field :image
             .btn-parts
               %a.btn-nomal{href:"/users/"} 戻る
             .btn-parts{style: "margin-bottom:0;"}
