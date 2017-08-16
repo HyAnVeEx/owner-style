@@ -19,10 +19,6 @@
                 %span.unit /一口
               %dt 購入数の登録
               %dd
-                / %select{:name => "num"}
-                /   %option{:selected => "selected", :value => "1"} 1
-                /   %option{:value => "2"} 2
-                /   %option{:value => "3"} 3
               .input
                 = form_for([@product,@order]) do |f|
                   %ul

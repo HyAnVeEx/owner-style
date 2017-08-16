@@ -1,0 +1,40 @@
+.modal-content
+  %h1.modal__h1 ログイン
+  = form_for(:user, url: session_path(:user) ) do |f|
+    .field
+    .iconUser
+    - f.label :email
+    = f.text_field :email, placeholder: "メールアドレス"
+    .field
+    .iconPassword
+    - f.label :password
+    = f.password_field :password, placeholder: "****"
+    %br/
+    = f.submit "Sign in" ,class: "modal__submit"
+    %br/
+  %a.modal-close.button-link_ls 閉じる
+.modal-section
+  %h1.modal__h1 会員登録
+  = form_for(:user, url: registration_path(:user)) do |f|
+    .field_sign_up
+      - f.label :name
+      %br/
+      = f.text_field :name, placeholder: "氏名を入力してください"
+    .field_sign_up
+      - f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, placeholder: "メールアドレスを入力してください"
+    .field_sign_up
+      - f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "off", placeholder: "****"
+    .field_sign_up
+      - f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off", placeholder: "****"
+    .actions
+      = f.submit "Sign up"
+  %a.modal-close.button-link_ls 閉じる

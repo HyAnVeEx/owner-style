@@ -122,7 +122,7 @@ input[type="password"]{
   background-position:center;
   border:1px solid #ccc;
 }
-input[type="text"]{
+#user_name{
   width:76%;
   height:20px;
   margin-bottom:4%;
@@ -132,7 +132,7 @@ input[type="text"]{
   font-size:95%;
   color:#555;
 }
-input[type="email"]{
+#user_email{
   width:76%;
   height:20px;
   margin-bottom:4%;
@@ -142,9 +142,7 @@ input[type="email"]{
   font-size:95%;
   color:#555;
 }
-
-
-input[type="submit"]{
+.modal__submit{
   width:100%;
   background:#004A3E;
   border:0;
@@ -157,7 +155,7 @@ input[type="submit"]{
   -webkit-transition:background .3s;
 }
 
-input[type="submit"]:hover{
+.modal__submit:hover{
   background:#53B9A8;
 }
 ::-webkit-input-placeholder {
