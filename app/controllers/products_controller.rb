@@ -1,15 +1,17 @@
 class ProductsController < ApplicationController
   def index
-     @products = Product.all.order("created_at DESC")
+    @products = Product.all.order("created_at DESC")
 
-         # @products.each do |product|
-    #   @orders =  product.orders
-    #   sum = 0
-    #   @orders.each do |order|
-    #     sum += order.num
-    #   end
-    #   @sum = sum
-    # end
+    @products.each do |product|
+      @orders =  product.orders
+      sum = 0
+      @orders.each do |order|
+        sum += order.num
+      end
+      @sum = sum
+    end
+    # binding.pry
+
   end
 
   def new
@@ -31,7 +33,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :area, :price, :deadline, :image)
+    params.require(:product).permit(:title, :area, :price, :deadline, :image, :max_num)
 
   end
 

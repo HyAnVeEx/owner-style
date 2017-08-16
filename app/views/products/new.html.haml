@@ -35,6 +35,14 @@
                     = f.text_field :price, placeholder:' 一口の金額を登録してください'
             %dl
               %dt
+                最大申し込み数
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :max_num, placeholder:' 最大申し込み数を登録してください'
+            %dl
+              %dt
                 期限
                 %span ※
               %dd
