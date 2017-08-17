@@ -1,0 +1,61 @@
+#wrapper
+  %body
+    #wrapper
+      #container.mypage-area
+        .header
+        = render partial: "orders/header"
+    .edit-area
+    = form_for(@product) do |f|
+      %article.clearfix
+        .product-edit
+          .w-box
+            %dl
+              %dt
+                タイトル
+                %span ※
+              %dd
+                .input
+                  .input.title
+                    = f.text_field :title, placeholder:' タイトルを登録してください', width: '500px'
+            %dl
+              %dt
+                産地
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :area, placeholder:'住所を登録してください'
+            %dl
+              %dt
+                オーナー登録費
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :price, placeholder:' 一口の金額を登録してください'
+            %dl
+              %dt
+                最大申し込み数
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :max_num, placeholder:' 最大申し込み数を登録してください'
+            %dl
+              %dt
+                期限
+                %span ※
+              %dd
+                .input
+                  .input.area
+                    = f.text_field :deadline, class:'deadline_area', placeholder:' YYYY/MM/DDで登録してください'
+
+          .w-box.clearfix{style: "margin-top:30px;"}
+            .p プロダクトのイメージ画像を登録してください
+            = f.file_field :image
+            .btn-parts{style: "margin-bottom:10px;"}
+            .btn-parts{style: "margin-bottom:0;"}
+              = f.submit "投稿する", class: 'product_submit.btn-green'
+
+%h2.js_header
+  = link_to "戻る", root_path, method: :get
