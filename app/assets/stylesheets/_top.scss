@@ -62,7 +62,6 @@
     float: left;
     margin-right: 40px;
     min-height: 390px;
-    margin-bottom: 100px;
 }
 
 .item-link:hover{
@@ -109,6 +108,7 @@
     display: table;
     width: 100%;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 .place {
@@ -117,11 +117,13 @@
     width: 50%;
     color: #6d796a;
     font-size: 12px;
-    font-size: 0.75rem;
+    font-size: 1rem;
+    text-align: left;
 }
 
 .price {
     text-align: right;
+    width: 130px;
 }
 a:hover {
     text-decoration: underline;
