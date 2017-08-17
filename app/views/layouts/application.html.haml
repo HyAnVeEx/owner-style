@@ -47,6 +47,6 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: "****"
         .actions
-          = f.submit "Sign up"
+          = f.submit "Sign up" ,class: "modal__submit"
       %a.modal-close.button-link_ls 閉じる
     = yield
