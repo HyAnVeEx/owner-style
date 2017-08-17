@@ -50,8 +50,13 @@
   %section.about-section
     - if user_signed_in?
       .add_product
-        %i.fa.fa-plus
-          = link_to "プロダクトを投稿する(admin)", new_product_path
+        .blackboard.question
+          %p.dorakue ＊「プロダクトを投稿しますか？」
+        .clearfix
+          .blackboard.answer.float-r
+            %p.blink-before
+              = link_to "はい", new_product_path
+            %p いいえ
     - else
       .about-section-container
         %h2.about-section-title OWNERSは、全国からとっておきの「オーナー制度」を集めた
