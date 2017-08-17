@@ -16,7 +16,10 @@
           %dt 募集締切
           %dd
             %span> #{@product.deadline}
-      %a.btn-green.ajax.cboxElement{:href => "/products/#{@product.id}/orders/new"} お申し込み
+      - if user_signed_in?
+        %a.btn-green.ajax.cboxElement{:href => "/products/#{@product.id}/orders/new"} お申し込み
+      - else
+        %a.btn-green.ajax.cboxElement{:href => "/", :method => "get"} ログインしてください
     #product-content
       %article.content
         %section
