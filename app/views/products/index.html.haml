@@ -91,6 +91,12 @@
               お待たせしました！
               %br>/
               生産者が育てた商品があなたの元へ届きます
+    %form
+    %p.sort_func ステータスで検索
+    %select{class: "status_sort",name: "status"}
+      %option{selected: "selected", value: "all"} 全て
+      %option{value: "受付中"} 受付中
+      %option{value: "受付終了"} 受付終了
     .items-area
       .content
         = render @products

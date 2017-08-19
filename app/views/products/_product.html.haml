@@ -1,11 +1,11 @@
 %a.item-link{href: "/products/#{product.id}"}
   -  num = product.rem
   - if  num == 0
-    %p.order_end 受付終了
+    %p.order_end #{product.status}
     %p.no_underline 申し込み上限に達しました
   - else
-    %p.order_now 受付中
-    %p.no_underline 残り #{product.rem}
+    %p.order_now #{product.status}
+    %p.no_underline 残り #{product.rem_num}
   %section.items
     %figure.item-image
       %img
