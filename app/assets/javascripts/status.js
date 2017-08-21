@@ -20,8 +20,8 @@ var all = "all"
     '<h2 class="top_product_title">' + product.title + '</h2>'+
     '<div class="info">'+
       '<p class="place">'+
-       '<i class="fa fa-map-marker"></i>'+
-        '${product.area}'+
+       '<i class="fa fa-map-marker"></i>'
+         + product.area +
       '</p>'+
       '<p class="price">'+
         '<i class="fa fa-shopping-bag"></i>'+
