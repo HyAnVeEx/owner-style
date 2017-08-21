@@ -34,7 +34,7 @@ var all = "all"
   }
   $(".status_sort").on("change", function() {
     var path = location.pathname ;
-    var html_status = $(`.status_sort`).val();
+    var html_status = $(".status_sort").val();
     $(".item-link").remove()
     $.ajax({
       url: path,
