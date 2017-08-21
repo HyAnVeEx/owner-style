@@ -19,7 +19,7 @@
       - if user_signed_in?
         %a.btn-green.ajax.cboxElement{:href => "/products/#{@product.id}/orders/new"} お申し込み
       - else
-        %a.btn-green.ajax.cboxElement{:href => "/", :method => "get"} ログインしてください
+        = link_to "ログインしてください", root_path, method: :get, class: 'btn-green'
     #product-content
       %article.content
         %section
